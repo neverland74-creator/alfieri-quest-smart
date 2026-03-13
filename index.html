@@ -1442,6 +1442,12 @@ function animateTitle(){
   window.addEventListener('resize', updateMobileControls);
 })();
 
+// Expose functions to global scope (needed for onclick in HTML, since JS is inside DOMContentLoaded)
+window.toggleMute = toggleMute;
+window.showTitle = showTitle;
+window.startGame = startGame;
+window.nextLevel = typeof nextLevel !== 'undefined' ? nextLevel : null;
+
 // ===================== START =====================
 showTitle();
 
